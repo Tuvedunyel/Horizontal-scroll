@@ -4,9 +4,13 @@ body, html {
 }
 
 .scroll__container {
-    height: 100%;
-    width: auto;
+    height: 100vh;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+canvas {
+    height: 800px !important;
 }
