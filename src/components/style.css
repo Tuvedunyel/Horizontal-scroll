@@ -11,6 +11,6 @@ body, html {
     align-items: center;
 }
 
-canvas {
-    height: 800px !important;
+.canvas {
+    height: 500px !important;
 }
