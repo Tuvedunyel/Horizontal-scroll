@@ -1,32 +1,18 @@
-import { FC, Suspense } from 'react';
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from '@react-three/drei';
-import Box from "./Box";
+import { FC, useState } from 'react';
 import './style.css'
-import AnimatedSphere from "./AnimatesSphere";
+import BoxCircle from "./BoxCircle";
+import BoxCanvas from "./BoxCanvas";
 
 
 const Home: FC = () => {
+    const [ showBox, setShowBox ] = useState( false )
 
     return (
         <>
             <h1>Hello</h1>
-            <Canvas className="canvas">
-                <OrbitControls enableZoom={ false }/>
-                <ambientLight intensity={ 0.5 }/>
-                <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 }/>
-                <Suspense fallback={ null }>
-                    <Box/>
-                </Suspense>
-            </Canvas>
-            <Canvas className="canvas">
-                <OrbitControls enableZoom={ false }/>
-                <ambientLight intensity={ 0.5 }/>
-                <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 }/>
-                <Suspense fallback={ null }>
-                    <AnimatedSphere />
-                </Suspense>
-            </Canvas>
+            <button onClick={ () => setShowBox(!showBox) }>Changer de plan</button>
+            { showBox ? <BoxCanvas /> : <BoxCircle /> }
+
         </>
     );
 }
