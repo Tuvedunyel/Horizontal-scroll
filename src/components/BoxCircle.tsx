@@ -12,7 +12,7 @@ const BoxCircle: FC = () => {
                 <ambientLight intensity={ 0.5 }/>
                 <directionalLight position={ [ -2, 5, 2 ] } intensity={ 1 }/>
                 <Suspense fallback={ null }>
-                    <Box/>
+                    <Box />
                 </Suspense>
             </Canvas>
             <Canvas className="canvas">
